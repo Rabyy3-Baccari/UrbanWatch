@@ -1,4 +1,4 @@
-"use server" // alternative to api routes 
+"use server";
 
 import { revalidatePath } from "next/cache";
 
@@ -17,10 +17,7 @@ export async function createUser(user: CreateUserParams) {
   } catch (error) {
     handleError(error);
   }
-}//Databse user ? while we use Clerk ? 
- // we need DB user to kn if usr has created imgs or not 
- // reference inferences with users 
- // webhooks !! 
+}
 
 // READ
 export async function getUserById(userId: string) {
@@ -94,10 +91,3 @@ export async function updateCredits(userId: string, creditFee: number) {
     handleError(error);
   }
 }
-
-
-
-// webhook : something that happens when an event is triggered 
-// Clerk triggers an event when a user signs in with clerk account
-//rqst with payload containing clerk data 
-// to event processing to DB and creat n sync 
